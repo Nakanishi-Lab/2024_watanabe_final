@@ -81,6 +81,7 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/min6.tfm
+OUTPUT 2024_watanabe_saishuu.dvi
 INPUT /Users/watanabe_shouta/2024-chukan/picture/fish-torso.jpg
 INPUT /Users/watanabe_shouta/2024-chukan/picture/fish-torso.jpg
 INPUT /Users/watanabe_shouta/2024-chukan/picture/fish-torso.jpg
@@ -95,5 +96,4 @@ INPUT /Users/watanabe_shouta/2024-chukan/picture/fish-copy.jpg
 INPUT extractbb -B cropbox -O /Users/watanabe_shouta/2024-chukan/picture/fish-copy.jpg
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-OUTPUT 2024_watanabe_saishuu.dvi
 INPUT 2024_watanabe_saishuu.aux
