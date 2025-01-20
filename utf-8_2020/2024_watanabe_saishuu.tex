@@ -3,19 +3,20 @@
 \usepackage[ms]{pxchfon}% MSフォントを指定
 \usepackage{twocolumn}
 
-%\usepackage[dvi ps]{graphicx} %%画像を読み込む
 
+%\usepackage[dvi ps]{graphicx} %%画像を読み込む
+\setlength\floatsep{0pt}
 \usepackage[dvipdfmx]{graphicx} %%画像を読み込む
 \usepackage{here}%画像の配置場所の指定をプログラムの実行順に強制的に配置する
-\newcommand{\setPicture}[1]{\includegraphics[width=0.9\linewidth]{/Users/watanabe_shouta/2024_saishuu/picture/#1}}
+\newcommand{\setPicture}[1]{\includegraphics[width=1\linewidth]{/Users/watanabe_shouta/2024_saishuu/picture/#1}}
   
-
-\usepackage{subfigure}
+\usepackage{subcaption}
 \usepackage{amsmath}          %%genfrac http://www．biwako．shiga-u．ac．jp/sensei/kumazawa/tex/form006．html
 %\usepackage{newtxtext,newtxmath}
 \usepackage{ulem}             %%http://biwako．shiga-u．ac．jp/sensei/kumazawa/tex/ulem．html     uline，uuline，uwave，sout，xoutなど
 \usepackage{multirow}
 \usepackage{chukan2020}       %%最後に読み込むこと！(最後に読み込まないと\textwidthなどの設定が反映されない)
+
 
 \pagestyle{empty} %ページ番号を入れるときにはコメントアウトする
 
@@ -55,51 +56,148 @@ Keywords: Fish-Type Robot, Flexible and Bendable Torso
 
 \section{リンク追従可能な柔軟外皮装着魚ロボット}
 \subsection{魚型ロボットの開発}
-図に開発した魚型ロボットを．魚型ロボットの構造を図に示す．
+図\ref{fig:skin}に開発した魚型ロボットを．魚型ロボットの構造を図\ref{fig:structure}に示す．
 魚の泳ぎ方としてアジ型遊泳という代表的な遊泳方法があり,実際の魚に動作を近づけるべく,今回は3Dスキャンされたアジのデータをもとに,元の
 サイズを2倍したサイズでロボットのボディを作成した.
 
 ロボットは頭部，胴体部,外皮の3つからなり,頭部と胴体部をそれぞれ別の外皮で包む構造になっている.ただし,頭部内部は空気で満たし,胴体部は
 外皮の内部に水をいれ、浸水させた状態にしている.
 頭部には制御回路とバッテリを格納している.頭部内部を空気で満たし防水を行う方法としては,光造形方式の3Dプリンタで制作した頭部の上からシリコン
-製の外皮をかぶせ,首元を締め付けることによって実現している.マイコンはM5stampPicoを使用しており、マイコンをwifiのアクセスポイ
-ントとして機能させることでスマホを用いて遠隔で角度指定等が可能である.
+製の外皮をかぶせ,首元を締め付けることによって実現している.また,頭部にワンタッチロック機能を搭載しており,バッテリやマイコンの取り出しが容易に行える.
+マイコンはM5stampPicoを搭載しており、マイコンをwifiのアクセスポイントとして機能させることでスマホを用いて遠隔で角度指定等が可能である.
 胴体部に関して,胴体部の前半分は頭部と一体になっており、その部分に防水仕様（IP67）のサーボモータ（Flash Hobby, M45CHW）を配置している.
 また,サーボモータには後述する動作のためにプーリを取り付けており、そこに糸を巻き付けている.
-胴体部の後ろ半分は厚さ0.75mmの弾性樹脂板（ポリプロピレン板）とリンクで構成されており,胴体内部を浸水させるためにリンクには穴を開けている.
+胴体部の後ろ半分は厚さ0.75mmの弾性樹脂板（ポリプロピレン
+\begin{figure}[H]
+   \centering
+   \setPicture{withskin.jpg}
+   \caption{作製した魚ロボット}
+   \label{fig:skin}
+\end{figure}
+\begin{figure}[H]
+   \centering
+   \setPicture{fish.pdf}
+   \caption{魚ロボットの構造}
+   \label{fig:structure}
+\end{figure}
+\begin{figure}[H]
+ \begin{minipage}[t]{0.45\linewidth}
+   \centering
+   \setPicture{katata.jpg}
+   \caption{型（胴体部）}
+   \label{fig:kata}
+ \end{minipage}
+ \hspace*{0.05\columnwidth}
+ \begin{minipage}[t]{0.45\linewidth}
+   \centering
+   \setPicture{kawa.jpg}
+   \caption{完成した外皮}
+   \label{fig:kawa}
+ \end{minipage}
+\end{figure}
+\noindent 板）とリンクで構成されており,胴体内部を浸水させるためにリンクには穴を開けている.
 また,糸を通すために浸水用の穴とは別に2mm程度の穴も開けている.
-胴体部の一番後ろには厚さ0.3mmのポリスチレン製の尾びれをつけており,遊泳軌道追従のためのトラッキングマーカーを取り付けている.
+胴体部の一番後ろには厚さ0.3mmのポリスチレン製の尾びれをつけており,遊泳軌道追従のためのトラッキングマーカーを取り付けている.尾びれを固定するリンクには
+プーリから伸びる糸の一端が取り付けられている.
 また,遊泳時に水中姿勢を水平に保つために、頭部,サーボ上部,弾性体などに重り25gと浮きをつけバランス調整を行った.
 
 今回駆動方法として,魚のように緩やかに体を湾曲させることが可能なワイヤ駆動方式を採用している.
 動作としてはサーボモータに取り付けられたプーリが左右に動き，ワイヤが巻き取られることによって，弾性体に取り付けられたリンクが引っ
 張られ，弾性体をたわませる.それによって体をしならせ、水をかくことで遊泳する.
 
-\section{柔軟外皮の作製}
-今回,外皮を作製するため鋳造のように型にシリコンを流し入れることによって外皮の作成を行った.図に外皮作製に用いた型と中子を示す.中子とは鋳造に
+\begin{figure*}[htbp]
+  \centering
+  \begin{tabular}{ccc}
+   \begin{minipage}[c]{0.25\linewidth}
+      \centering
+      \setPicture{t1000.eps}
+      \subcaption{t=1000msの場合}
+      \label{fig:t1000}
+   \end{minipage}
+   \begin{minipage}[c]{0.25\linewidth}
+      \centering
+      \setPicture{t2000.eps}
+      \subcaption{t=2000msの場合}
+      \label{fig:t2000}
+   \end{minipage}
+   \begin{minipage}[c]{0.25\linewidth}
+    \centering
+    \setPicture{t3000.eps}
+    \subcaption{t=3000msの場合}
+    \label{fig:t3000}
+   \end{minipage}
+  \end{tabular}
+  \caption{周期一定時の速度変化}
+  \label{fig:period}
+\end{figure*}
+
+\begin{figure*}[htbp]
+  \centering
+  \begin{tabular}{ccc}
+   \begin{minipage}[c]{0.25\linewidth}
+      \centering
+      \setPicture{an90.eps}
+      \subcaption{an=90の場合}
+      \label{fig:an90}
+   \end{minipage}
+   \begin{minipage}[c]{0.25\linewidth}
+      \centering
+      \setPicture{an135.eps}
+      \subcaption{an=135の場合}
+      \label{fig:an135}
+   \end{minipage}
+   \begin{minipage}[c]{0.25\linewidth}
+    \centering
+    \setPicture{an180.eps}
+    \subcaption{an=180の場合}
+    \label{fig:an180}
+   \end{minipage}
+  \end{tabular}
+  \caption{振幅一定時の速度変化}
+  \label{fig:amp}
+\end{figure*}
+
+\subsection{柔軟外皮の作製}
+今回,外皮を作製するため鋳造のように型にシリコンを流し入れることによって外皮の作成を行った.図\ref{fig:kata}に外皮作製に用いた型と中子を示す.中子とは鋳造に
 おいて中空部を作るために使われているもので,型の間にはめ込んで使用する.型と中子はロボットと同じようにスキャンデータからモデルを作成した.
 今回は胴体部と頭部の皮をそれぞれ作成した.
 胴体部の皮についてはリンクの動きに追従させるために,リンクがはまるような溝を外皮内部に作製することにした.また,外皮を曲げた時にできるしわを改善するために
-多少ロボットのサイズよりも小さく外皮を設計し,しっかり張った状態で装着することにした.
-皮の作成手順は次のとおりである.
+設計したロボットの胴体モデルを90パーセント縮小させて外皮を設計し,装着した時にしっかり皮が張った状態になるようにした.
 
-\begin{figure}[t]
-   \centering
-   \setPicture{skinless.jpg}
-   \vspace*{-4mm}
-   \caption{柔軟外皮を有するロボット（皮なし）}
-   \label{fig:bandable-Torso}
-\end{figure}
-\begin{figure}[t]
-   \centering
-   \setPicture{withskin.jpg}
-   \vspace*{-4mm}
-   \caption{柔軟外皮を有するロボット（皮あり）}
-   \label{fig:structure}
-\end{figure}
+皮の作成手順は次のとおりである.
+まず型と中子に離型剤（GSIクレオス 多目的離型剤）を塗布する.この工程を挟まないと,大きめのモデルを作成するときにシリコンが型に張り付いてしまい,取り出すときに
+困難になる.次に型と中子をはめ合わせ,クランプでしっかり挟み込んで固定する.この隙間に工作用紙を挟み込み,シリコンが漏れ出すのを防ぐ.次にシリコン液（ECOFLEX30）
+を用意し,真空ポンプを用いて真空脱泡を行う.この工程を行うことでシリコンに穴が開かないようにする.最後にシリンジを用いてシリコン液を型に流し込み,4時間以上放置
+することでシリコンが固まり,外皮が完成する.
+
+\section{遊泳実験}
+\subsection{実験条件}
+今回,外皮による遊泳性能の検証を行うためにロボットに外皮を装着した状態と未装着の状態とで直進遊泳実験を行い,速度を比較することにした.実験は2つ行い,
+1つ目は弾性体を振る周期tが一定の状態で尾びれ振幅anを変化させたときの速度の変化について,2つ目は尾びれ振幅an一定の状態で周期tを変化させたときの速度の変化について実験を
+行うことにした.1つ目の実験は周期tを1000ms～3000msで1000msごとに設定し,それぞれの周期で尾びれ振幅anを45～180度まで45度ずつ変化させて合計12個のパラメータについて
+皮装着時,未装着時それぞれについて実験を行った.2つ目の実験は尾びれ振幅anを90～180度まで45度ごとに設定し,それぞれの振幅で周期tを600～1200msまで200msずつ変化させて
+合計12個のパラメータについて皮装着時,未装着時それぞれについて実験を行った.
+
+\subsection{実験結果}
+図\ref{fig:period},図\ref{fig:amp}に実験結果を示す.今回,直進遊泳をさせたかったがやや時計回りに進路が傾くことがあった.実験結果から皮あり,皮なし両
+方に共通して周期が短く,振幅が大きいと遊泳速度が向上するということが分かった.また,ほぼすべての実験において皮を装着した状態の魚ロボットの方が未装着時よりも速度が速くな
+っていることもわかる.また,皮あり皮なしで実験結果に大きく差が出るのはan=180でtを600ms~1200msに変化させたときだった.
+
+\section{考察}
+まず,直進遊泳を行えなかった原因として,糸にかかるテンションに少し偏りがあったと考える.本来であれば左右の糸を同じ強さで引っ張る必要があるが,引っ張る力を測定して糸を張っていた
+わけではないので少なからず偏りがあったと考える.今回の場合だと,右側の張力が左側よりも強くなっていたために時計回りに進路が傾いてしまったと考える.
+
+次に,皮を装着した時としなかった時で速度に差が出たことについて考察する.今回外皮を装着したロボットの方が遊泳速度が速くなった要因としては,水を掻く部分の面積が外皮未装着の状態
+の時よりも大きくなっていることにあると考える.外皮なしの状態だと水を掻けるのは弾性体と尾びれのみになり,その面積は1.09
+
+
+
+
 
 %図の配置にHを使うとコードの順に無理やりねじ込もうとするので見出しと本文の間隔が引き延ばされる可能性アリ.注意すべし
 %noindentを使えばHで図を配置した後に起きる強制的な改行を抑制することができる
+%ｔで配置したend figureの後ろにvspaceを置くと文章が変に詰められる可能性があるので注意
+%vspaceやhspaceは余白調整に便利なコマンドだが,なぜか本文の間隔が不自然に空いてしまうことがあるのでなるべく使わない（現在setcaptionで余白調整できないか検討中)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{まとめと今後の予定}

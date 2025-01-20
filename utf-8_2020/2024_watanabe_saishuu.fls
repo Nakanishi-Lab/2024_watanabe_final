@@ -35,11 +35,12 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/here/here.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/here/here.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/float/float.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/float/float.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.sty
-INPUT c:/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.cfg
-INPUT c:/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.cfg
-INPUT c:/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.cfg
+INPUT ./subcaption.sty
+INPUT subcaption.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
@@ -81,14 +82,49 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/min6.tfm
-INPUT /Users/watanabe_shouta/2024_saishuu/picture/skinless.jpg
-INPUT /Users/watanabe_shouta/2024_saishuu/picture/skinless.jpg
-INPUT /Users/watanabe_shouta/2024_saishuu/picture/skinless.jpg
-INPUT extractbb -B cropbox -O /Users/watanabe_shouta/2024_saishuu/picture/skinless.jpg
 INPUT /Users/watanabe_shouta/2024_saishuu/picture/withskin.jpg
 INPUT /Users/watanabe_shouta/2024_saishuu/picture/withskin.jpg
 INPUT /Users/watanabe_shouta/2024_saishuu/picture/withskin.jpg
 INPUT extractbb -B cropbox -O /Users/watanabe_shouta/2024_saishuu/picture/withskin.jpg
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/fish.pdf
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/fish.pdf
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/fish.pdf
+INPUT extractbb -B cropbox -O /Users/watanabe_shouta/2024_saishuu/picture/fish.pdf
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/katata.jpg
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/katata.jpg
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/katata.jpg
+INPUT extractbb -B cropbox -O /Users/watanabe_shouta/2024_saishuu/picture/katata.jpg
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/kawa.jpg
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/kawa.jpg
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/kawa.jpg
+INPUT extractbb -B cropbox -O /Users/watanabe_shouta/2024_saishuu/picture/kawa.jpg
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t1000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t1000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t1000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t1000.eps
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin8.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/min8.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t2000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t2000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t2000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t2000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t3000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t3000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t3000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/t3000.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an90.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an90.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an90.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an90.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an135.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an135.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an135.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an135.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an180.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an180.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an180.eps
+INPUT /Users/watanabe_shouta/2024_saishuu/picture/an180.eps
 OUTPUT 2024_watanabe_saishuu.dvi
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
